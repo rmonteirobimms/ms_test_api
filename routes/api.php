@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RestoreController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -26,9 +27,8 @@ Route::put('/users/{id}', [UserController::class, 'update']);
 Route::post('/users', [UserController::class, 'store']);
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
-
-Route::get('/restore/{resource}/{id}', [UserController::class, 'restore']);
-//Route::delete('/users/restore/{id}', [UserController::class, 'destroy']);
+Route::post('/restore', [RestoreController::class, 'bulk_restore']);
+Route::post('/restore/{resource}/{id}', [RestoreController::class, 'restore']);
 
 
 Route::get('/', function () {
