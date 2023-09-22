@@ -18,17 +18,29 @@ use App\Http\Controllers\UserController;
 
 
 Route::middleware('auth:sanctum')->group(function () {
-   
+    /**
+     *  Basic User CRUD. Requires a valid session.
+     */
+
+
+    Route::get('/users/{id}', [UserController::class, 'show']);
+    Route::put('/users/{id}', [UserController::class, 'update']);
+    Route::delete('/users/{id}', [UserController::class, 'destroy']);
+
+
+    /**
+     *  Routes to restore Users. Will require admin permissions.
+     */
+    Route::post('/restore', [RestoreController::class, 'bulk_restore']);
+    Route::post('/restore/{resource}/{id}', [RestoreController::class, 'restore']);
 });
 
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/{id}', [UserController::class, 'show']);
-Route::put('/users/{id}', [UserController::class, 'update']);
-Route::post('/users', [UserController::class, 'store']);
-Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
-Route::post('/restore', [RestoreController::class, 'bulk_restore']);
-Route::post('/restore/{resource}/{id}', [RestoreController::class, 'restore']);
+Route::get('/users', [UserController::class, 'index']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+
 
 
 Route::get('/', function () {

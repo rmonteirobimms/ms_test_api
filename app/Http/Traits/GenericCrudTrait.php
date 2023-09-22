@@ -4,7 +4,8 @@ namespace App\Http\Traits;
 
 use Illuminate\Http\Request;
 
-trait GenericCrudTrait {
+trait GenericCrudTrait
+{
 
     /**
      * Get the model class for this controller.
@@ -44,11 +45,11 @@ trait GenericCrudTrait {
 
         $users_count = count($data[$class_name]);
 
-        if(!$users_count){
+        if (!$users_count) {
             // Usually sendFail would apply here, but there is no data to return
             return $this->sendError("No {$class_name}(s) were found.", 404);
         }
-        
+
         return $this->sendResponse($data, "Found {$users_count} {$class_name}(s).");
     }
 
@@ -60,13 +61,13 @@ trait GenericCrudTrait {
         $class_name = $this->getModelName();
         $data[$class_name] = $this->getModel()::find($id);
 
-        if(!$data[$class_name]){
+        if (!$data[$class_name]) {
             return $this->sendFail($id, "Couldn't find '{$class_name}' with the id: {$id}.", 404);
         }
 
         return $this->sendResponse($data);
     }
-    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -79,7 +80,7 @@ trait GenericCrudTrait {
 
         $data[$class_name] = $model::create($validated);
 
-        if(!$data[$class_name]){
+        if (!$data[$class_name]) {
             return $this->sendError("Error creating new '{$class_name}'. Please, try again later.");
         }
 
@@ -98,11 +99,11 @@ trait GenericCrudTrait {
 
         $data[$class_name]  = $model::find($id);
 
-        if(!$data[$class_name] ){
+        if (!$data[$class_name]) {
             return $this->sendFail($id, "Couldn't find a '{$class_name}' with the id: {$id}.", 404);
         }
 
-        if($data[$class_name]->update($validated_request) === false){
+        if ($data[$class_name]->update($validated_request) === false) {
             return $this->sendError("Error updating the '{$class_name}' with id: {$id}.");
         }
 
@@ -119,11 +120,11 @@ trait GenericCrudTrait {
 
         $data["result"] = $model::find($id);
 
-        if(!$data["result"]){
+        if (!$data["result"]) {
             return $this->sendFail($id, "Couldn't find '{$class_name}' with the id: {$id}.", 404);
         }
 
-        if($data["result"]->delete() == false){
+        if ($data["result"]->delete() == false) {
             return $this->sendError("Error deleting the '{$class_name}' with id: {$id}.");
         }
 
