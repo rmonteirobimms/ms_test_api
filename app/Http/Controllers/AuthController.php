@@ -53,5 +53,7 @@ class AuthController extends Controller
         }
 
         $user = User::where($identifier, $value)->first();
+
+        return $this->sendResponse($user, "Login sucessfull.", 201);
     }
 }
