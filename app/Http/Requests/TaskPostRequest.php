@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class BulkRestoreRequest extends FormRequest
+class TaskPostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,9 @@ class BulkRestoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required|array',
-            'id.*' => 'required|integer',
-            'resource' => 'required|string'
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'profile_id' => 'required|integer'
         ];
     }
 }

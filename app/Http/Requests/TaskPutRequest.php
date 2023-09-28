@@ -2,17 +2,16 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class BulkRestoreRequest extends FormRequest
+class TaskPutRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return Auth::check();
+        return false;
     }
 
     /**
@@ -23,9 +22,9 @@ class BulkRestoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required|array',
-            'id.*' => 'required|integer',
-            'resource' => 'required|string'
+            'name' => 'nullable|string|max:255',
+            'email' => 'nullable|string|email:rfc,strict,filter',
+            'user_id' => 'nullable|integer'
         ];
     }
 }

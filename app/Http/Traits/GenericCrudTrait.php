@@ -43,14 +43,14 @@ trait GenericCrudTrait
         $class_name = $this->getModelName();
         $data[$class_name] = $this->getModel()::all();
 
-        $users_count = count($data[$class_name]);
+        $objects_count = count($data[$class_name]);
 
-        if (!$users_count) {
+        if (!$objects_count) {
             // Usually sendFail would apply here, but there is no data to return
             return $this->sendError("No {$class_name}(s) were found.", 404);
         }
 
-        return $this->sendResponse($data, "Found {$users_count} {$class_name}(s).");
+        return $this->sendResponse($data, "Found {$objects_count} {$class_name}(s).");
     }
 
     /**

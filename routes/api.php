@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\RestoreController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RestoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +23,25 @@ Route::middleware('auth:sanctum')->group(function () {
     /**
      *  Basic User CRUD. Requires a valid session.
      */
-
-
+    Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/{id}', [UserController::class, 'show']);
     Route::put('/users/{id}', [UserController::class, 'update']);
     Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
+    /**
+     *  Basic Profile CRUD. Requires a valid session.
+     */
+
+    Route::get('/profiles', [ProfileController::class, 'index']);
+    Route::get('/profiles/{id}', [ProfileController::class, 'show']);
+    Route::post('/profiles', [ProfileController::class, 'store']);
+    Route::put('/profiles/{id}', [ProfileController::class, 'update']);
+    Route::delete('/profiles/{id}', [UserController::class, 'destroy']);
+
+    /**
+     *  Routes to restore Users. Will require admin permissions.
+     */
+    Route::post('/logout', [AuthController::class, 'logout']);
 
     /**
      *  Routes to restore Users. Will require admin permissions.
@@ -36,7 +51,6 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 
-Route::get('/users', [UserController::class, 'index']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 

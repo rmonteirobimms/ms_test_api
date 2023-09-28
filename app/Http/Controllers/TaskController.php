@@ -2,34 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfilePostRequest;
-use App\Http\Requests\ProfilePutRequest;
-use App\Models\Profile;
+use App\Http\Requests\TaskPostRequest;
+use App\Http\Requests\TaskPutRequest;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Http\Traits\ApiResponseTrait;
 use App\Http\Traits\GenericCrudTrait;
 
-class ProfileController extends Controller
+class TaskController extends Controller
 {
     use ApiResponseTrait, GenericCrudTrait;
 
     function getModel()
     {
-        return Profile::class;
+        return Task::class;
     }
 
     function getModelName()
     {
-        return strtolower(trim(class_basename(Profile::class)));
+        return strtolower(trim(class_basename(Task::class)));
     }
 
     function getPostValidationRules()
     {
-        return (new ProfilePostRequest())->rules();
+        return (new TaskPostRequest())->rules();
     }
 
     function getPutValidationRules()
     {
-        return (new ProfilePutRequest())->rules();
+        return (new TaskPutRequest())->rules();
     }
 }
