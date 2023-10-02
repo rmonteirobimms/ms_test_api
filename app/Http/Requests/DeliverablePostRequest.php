@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TaskPostRequest extends FormRequest
+class DeliverablePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class TaskPostRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'creator_id' => 'required|integer',
-            'assigned_to' => 'required|integer'
+            'original_name' => 'required|string|max:255',
+            'task_id' => 'required|integer'
         ];
     }
 }

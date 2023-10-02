@@ -17,7 +17,8 @@ class Task extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'profile_id',
+        'creator_id',
+        'assigned_to',
         'title',
         'description',
     ];
@@ -38,8 +39,14 @@ class Task extends Model
     protected $casts = [];
 
     // Relationship to owner user
-    public function profile()
+    public function creator()
     {
-        return $this->belongsTo(Profile::class, 'profile_id');
+        return $this->belongsTo(Profile::class, 'creator_id');
+    }
+
+    // Relationship to owner user
+    public function assignee()
+    {
+        return $this->belongsTo(Profile::class, 'assigned_to');
     }
 }

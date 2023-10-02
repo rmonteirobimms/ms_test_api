@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class TaskPutRequest extends FormRequest
@@ -11,7 +12,7 @@ class TaskPutRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -22,9 +23,9 @@ class TaskPutRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'nullable|string|max:255',
-            'email' => 'nullable|string|email:rfc,strict,filter',
-            'user_id' => 'nullable|integer'
+            'title' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:255',
+            'profile_id' => 'nullable|integer'
         ];
     }
 }
