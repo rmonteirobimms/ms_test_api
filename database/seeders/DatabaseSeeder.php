@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Deliverable;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\Profile;
@@ -22,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $ricardo_u = User::factory()->create([
             'username' => 'monte1ro',
             'first_name' => 'Ricardo',
-            'last_name' => 'Ricardo',
+            'last_name' => 'Monteiro',
             'password' => 'password'
         ]);
 
@@ -40,20 +42,45 @@ class DatabaseSeeder extends Seeder
             'password' => 'imacena'
         ]);
 
-        $ricardo_p = Profile::factory()->create(['user_id' => $ricardo_u->id]);
-        $joao_p = Profile::factory()->create(['user_id' => $joao_u->id]);
-        $isabela_p = Profile::factory()->create(['user_id' => $isabela_u->id]);
+        $ricardo_p = Profile::factory()->create([
+            'user_id' => $ricardo_u->id,
+            'name' => $ricardo_u->first_name,
+            'email' => strtolower($ricardo_u->first_name[0] . $ricardo_u->last_name . '@bimms.net'),
+            'imageURL' => '/images/user-default.png',
+        ]);
+        $joao_p = Profile::factory()->create([
+            'user_id' => $joao_u->id,
+            'name' => $joao_u->first_name,
+            'email' => strtolower($joao_u->first_name[0] . $joao_u->last_name . '@bimms.net'),
+            'imageURL' => '/images/user-default.png',
+        ]);
+        $isabela_p = Profile::factory()->create([
+            'user_id' => $isabela_u->id,
+            'name' => $isabela_u->first_name,
+            'email' => strtolower($isabela_u->first_name[0] . $isabela_u->last_name . '@bimms.net'),
+            'imageURL' => '/images/user-default.png',
+        ]);
 
         Task::factory(50)->create();
 
-        Task::factory()->create([
+        $isabela_t = Task::factory()->create([
             'creator_id' => $joao_p->id,
             'assigned_to' => $isabela_p->id
         ]);
 
-        Task::factory()->create([
+        $ricardo_t = Task::factory()->create([
             'creator_id' => $isabela_p->id,
             'assigned_to' => $ricardo_p->id
+        ]);
+
+        Deliverable::factory(150)->create();
+
+        Deliverable::factory()->create([
+            'task_id' => $isabela_t->id
+        ]);
+
+        Deliverable::factory()->create([
+            'task_id' => $ricardo_t->id
         ]);
     }
 }

@@ -27,7 +27,8 @@ class ProfilePostRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email:rfc,strict,filter',
-            'user_id' => 'required|integer'
+            'user_id' => 'required|integer',
+            'avatarURL' => 'nullable|string',
         ];
     }
 }

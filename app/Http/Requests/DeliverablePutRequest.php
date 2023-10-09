@@ -25,7 +25,17 @@ class DeliverablePutRequest extends FormRequest
         return [
             'title' => 'nullable|string|max:255',
             'original_name' => 'nullable|string|max:255',
-            'task_id' => 'nullable|integer'
+            'task_id' => 'nullable|integer',
+            'status' => 'required|in:0,1,2,3'
         ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        if ($this->status !== null) {
+            $this->merge([
+                'status' => intval((trim($this->status))),
+            ]);
+        }
     }
 }

@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestoreController;
+use App\Http\Controllers\DeliverableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/profiles/{id}', [ProfileController::class, 'update']);
     Route::delete('/profiles/{id}', [UserController::class, 'destroy']);
 
+    Route::post('/upload', [UploadController::class, 'store']);
+
     /**
      *  Basic Task CRUD. Requires a valid session.
      */
@@ -48,6 +52,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/tasks', [TaskController::class, 'store']);
     Route::put('/tasks/{id}', [TaskController::class, 'update']);
     Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
+
+    /**
+     *  Basic Deliverable CRUD. Requires a valid session.
+     */
+
+    Route::get('/deliverables', [DeliverableController::class, 'index']);
+    Route::get('/deliverables/{id}', [DeliverableController::class, 'show']);
+    Route::post('/deliverables', [DeliverableController::class, 'store']);
+    Route::put('/deliverables/{id}', [DeliverableController::class, 'update']);
+    Route::delete('/deliverables/{id}', [DeliverableController::class, 'destroy']);
 
     /**
      *  Routes to restore Users. Will require admin permissions.

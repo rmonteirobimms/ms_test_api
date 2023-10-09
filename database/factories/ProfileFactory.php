@@ -22,6 +22,7 @@ class ProfileFactory extends Factory
             'user_id' => $user->id,
             'name' => fake()->firstName(),
             'email' => fake()->unique()->safeEmail(),
+            'imageURL' => '/images/user-default.png',
         ];
     }
 }

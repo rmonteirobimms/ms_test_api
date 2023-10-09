@@ -21,8 +21,8 @@ class TaskFactory extends Factory
         $assignee = Profile::inRandomOrder()->first();
         return [
             'creator_id' => $creator->id,
-            'title' => fake()->firstName(),
-            'description' => fake()->unique()->safeEmail(),
+            'title' => fake()->sentence(),
+            'description' => fake()->paragraph(2),
             'assigned_to' => $assignee->id
         ];
     }

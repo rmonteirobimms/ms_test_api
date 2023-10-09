@@ -15,12 +15,12 @@ class DeliverableController extends Controller
 
     function getModel()
     {
-        return Task::class;
+        return Deliverable::class;
     }
 
     function getModelName()
     {
-        return strtolower(trim(class_basename(Task::class)));
+        return strtolower(trim(class_basename(Deliverable::class)));
     }
 
     function getPostValidationRules()

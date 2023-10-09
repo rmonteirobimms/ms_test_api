@@ -24,8 +24,16 @@ class DeliverablePostRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'original_name' => 'required|string|max:255',
-            'task_id' => 'required|integer'
+            'original_filename' => 'nullable|string|max:255',
+            'task_id' => 'required|integer',
+            'status' => 'required|in:0,1,2,3'
         ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'status' => 0,
+        ]);
     }
 }

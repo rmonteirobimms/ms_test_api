@@ -1,0 +1,1 @@
+<a href="{{ url() -> previous() }}" class="backArrow"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>

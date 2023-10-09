@@ -20,7 +20,8 @@ class Deliverable extends Model
     protected $fillable = [
         'task_id',
         'title',
-        'original_name',
+        'original_filename',
+        'status',
     ];
 
 

@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deliverables', function (Blueprint $table) {
+        Schema::create('temp_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("task_id")->constrained()->onDelete('cascade');
-            $table->string('title');
-            $table->string('original_filename')->nullable();
-            $table->string('status');
+            $table->string('folder');
+            $table->string('filename');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deliverables');
+        Schema::dropIfExists('temp_files');
     }
 };
