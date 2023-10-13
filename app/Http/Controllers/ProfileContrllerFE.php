@@ -13,9 +13,8 @@ class ProfileContrllerFE extends Controller
     // Show all profiles
     public function index(Request $request)
     {
-        //dd(Profile::where('user_id', auth()->user()->id)->get());
         $profiles = Profile::where('user_id', auth()->user()->id)->get();
-        //dd(Profile::where('user_id', auth()->user()->id)->get());
+
         return view('profiles.index', [
             'description' => 'Have a look at our profiles!',
             'profiles' => $profiles
@@ -41,12 +40,6 @@ class ProfileContrllerFE extends Controller
     {
         $profile = $request->validated();
 
-        /*$profile = Profile::create([
-            'user_id' => $profile['user_id'],
-            'email' => $profile['email'],
-            'name' => $profile['name'],
-            'imageURL' => $profile['imageURL']
-        ]);*/
         $profile = Profile::create($profile);
 
         $tempFile = TempFile::where('folder', $request->imageURL)->first();

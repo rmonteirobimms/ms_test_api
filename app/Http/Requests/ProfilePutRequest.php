@@ -24,8 +24,7 @@ class ProfilePutRequest extends FormRequest
     {
         return [
             'name' => 'nullable|string|max:255',
-            'email' => 'nullable|string|email:rfc,strict,filter',
-            'avatarURL' => 'nullable|string',
+            'email' => 'nullable|string|email:rfc,strict,filter'
         ];
     }
 }

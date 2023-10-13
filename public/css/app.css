@@ -11,16 +11,16 @@ body {
 }
 
 .management_table tbody tr {
-    font-size:smaller;
+    font-size: smaller;
     white-space: nowrap;
-    
+
 }
 
 .t-align-center {
     text-align: center;
 }
 
-.management_table tbody tr td{
+.management_table tbody tr td {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
@@ -35,7 +35,7 @@ body {
     display: inline-block;
 }
 
-.user_navbar_dropdown:hover .user-dropdown-content { 
+.user_navbar_dropdown:hover .user-dropdown-content {
     display: block;
 }
 
@@ -44,7 +44,7 @@ body {
     position: absolute;
     background-color: #f1f1f1;
     min-width: 7.5em;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -63,7 +63,7 @@ body {
     column-gap: 0.2em;
 }
 
-.user-dropdown-content a:hover { 
+.user-dropdown-content a:hover {
     background-color: #ddd;
 }
 
@@ -92,24 +92,24 @@ body {
     height: 1.5em;
     border-radius: 50%;
     border: 1px solid;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.33);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.33);
 }
 
 .red_bg {
     background: #ef1515 !important;
-    color: white!important;
-    box-shadow: 6px 6px 10px rgba(0,0,0,0.15);
+    color: white !important;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .blue_text {
-    color: #38d9d9!important;
+    color: #38d9d9 !important;
 }
 
 .end_buttons {
     text-align: center;
     margin-bottom: 1.5em;
     min-width: 30%;
-    justify-content: center ;
+    justify-content: center;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -117,7 +117,7 @@ body {
     align-content: center;
     align-items: center;
     column-gap: 0.5em;
-    box-shadow: 6px 6px 10px rgba(0,0,0,0.15);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .control_buttons {
@@ -131,9 +131,9 @@ body {
 }
 
 .end_buttons a {
-    justify-content: center ;
+    justify-content: center;
     text-transform: none;
-    color:white
+    color: white
 }
 
 .backArrow {
@@ -148,7 +148,7 @@ body {
 
 .page-item.active {
     font-weight: bold;
-    scale: 1.1; 
+    scale: 1.1;
 }
 
 .page-link {
@@ -157,7 +157,7 @@ body {
 
 .page-item {
     min-width: 1em;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     margin: 0.1em;
     padding: 0.5em;
@@ -196,12 +196,12 @@ body {
     justify-content: center;
     align-items: center;
     column-gap: 0.5em;
-    color:white;
+    color: white;
     cursor: default;
     transition: 0.3s ease-in-out;
 }
 
-.closebtn{
+.closebtn {
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -226,7 +226,7 @@ body {
 
 .create_form_label {
     min-width: 66%;
-    align-content: center!important;
+    align-content: center !important;
 }
 
 .create_input {
@@ -254,17 +254,17 @@ body {
     border-radius: 0.5em;
     border: 0;
     color: white;
-    box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .add_button:hover {
-    box-shadow: 6px 6px 10px rgba(0,0,0,0.15);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .show_image {
-    width: 100%; 
+    width: 100%;
     max-height: 40em;
 }
 
@@ -274,7 +274,7 @@ body {
 
 .image-with-border-radius {
     border-radius: 1em;
-    box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .justify-text {
@@ -283,7 +283,7 @@ body {
 
 .project_page {
     margin: 2rem;
-    box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
     background: #aaaaaa26;
     border-radius: 1em;
     padding: 1em;
@@ -317,7 +317,7 @@ body {
 }
 
 .no-border-input {
-    border:0
+    border: 0
 }
 
 .no-border-input:focus {
@@ -341,8 +341,8 @@ body {
 }
 
 .img_in_card {
-    width: 24em;
-    height: 16em;
+    width: 8em;
+    height: 8em;
 }
 
 .no_underline {
@@ -353,14 +353,14 @@ body {
     display: flex;
     gap: 1.5em;
     align-items: center;
-}   
+}
 
 .navbar_reg {
     transition: 0.3s ease-in-out;
 }
 
 .navbar_reg:hover {
-    scale:1.05;
+    scale: 1.05;
 }
 
 .navbar_log {
@@ -375,20 +375,20 @@ body {
     flex-wrap: wrap;
     align-items: center;
     text-decoration: none;
-    box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.15);
+    box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.15);
     transition: 0.3s ease-in-out;
 }
 
 .navbar_log:hover {
-    box-shadow: 0 0.5em 0.5em rgba(0,0,0,0.35);
-    scale:1.05;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.35);
+    scale: 1.05;
 }
 
-.no_margin{
-    margin:0
+.no_margin {
+    margin: 0
 }
 
-.bimms_font{
+.bimms_font {
     font-size: 4em;
 }
 
@@ -401,7 +401,7 @@ body {
     text-transform: capitalize;
 }
 
-.tags_row{
+.tags_row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -425,7 +425,7 @@ main {
     color: white;
 }
 
-.location_card{
+.location_card {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -458,17 +458,14 @@ main {
     align-content: center;
     justify-content: center;
     align-items: center;
-    flex: 1 1 30%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease-in-out;
-    padding: 1rem; 
     border-radius: 1rem;
     cursor: pointer;
     align-self: stretch;
 }
 
 .one_third_card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0px 5em rgba(0, 0, 0, 0.3);
 }
 
 .three_cards_row {
@@ -478,7 +475,6 @@ main {
     align-content: center;
     justify-content: space-around;
     align-items: center;
-    margin: 3rem 1rem;
     column-gap: 2rem;
     row-gap: 3rem;
 }
@@ -493,10 +489,54 @@ main {
 }
 
 .no_decoration_link {
-    color:black;
+    color: black;
     text-decoration: none;
 }
 
 a {
     color: black;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    margin: 1em;
+}
+
+thead {
+    background-color: #ddd;
+}
+
+.th_id {
+    width: 8rem;
+}
+
+.th_timestamp {
+    width: 10rem;
+}
+
+.th_title {
+    width: 15rem;
+}
+
+.th_desc {
+    width: 30rem;
+}
+
+td {
+    padding: 0.25em;
+    overflow: hidden;
+}
+
+th {
+    padding: 0.5rem;
+}
+
+.centered {
+    text-align: center;
 }

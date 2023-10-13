@@ -1,18 +1,19 @@
-<?php 
+<?php
 
 namespace App\Http\Traits;
 
-trait ApiResponseTrait{
+trait ApiResponseTrait
+{
 
     /**
      * Success response method. All went well, and (usually) some data was returned.
      * 
      * @param $result
-     * @param string $data
+     * @param array $data
      * @param int $code
      * @param array $headers
      *
-     * @return JsonResponse
+     * @return Illuminate\Http\Response
      */
     public function sendResponse($data, $message = "", $code = 200, $headers = [])
     {

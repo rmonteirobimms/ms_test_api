@@ -11,16 +11,16 @@
     </div>
     
     
-    <div class="three_cards_row">
+    <div class="three_cards_row" >
 
-    @if(count($profiles))
-    
-        @foreach($profiles as $k=>$profile)
-            <x-profile-card :profile="$profile" />
-        @endforeach
-    @endif
+        @if(count($profiles))
+        
+            @foreach($profiles as $k=>$profile)
+                <x-profile-card :profile="$profile" />
+            @endforeach
+        @endif
 
-    <button class="add_button"><a class ="no_underline" style="color:white" href="/profiles/create"><i class="fa-solid fa-plus"></i> </a></button>
+        <button class="add_button"><a class ="no_underline" style="color:white" href="/profiles/create"><i class="fa-solid fa-plus"></i> </a></button>
     </div>
 </div>
 

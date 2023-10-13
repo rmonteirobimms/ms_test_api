@@ -9,6 +9,7 @@ use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Traits\ApiResponseTrait;
 use App\Http\Requests\UserPostRequest;
+use Illuminate\Http\Response;
 
 class AuthController extends Controller
 {
@@ -21,7 +22,7 @@ class AuthController extends Controller
      * 
      * @param UserPostRequest $request
      * 
-     * @return JsonResponse
+     * @return Illuminate\Http\Response
      */
     public function register(UserPostRequest $request)
     {
@@ -45,7 +46,7 @@ class AuthController extends Controller
      * 
      * @param LoginRequest $request
      * 
-     * @return JsonResponse
+     * @return Illuminate\Http\Response
      */
     public function login(LoginRequest $request)
     {
@@ -86,7 +87,7 @@ class AuthController extends Controller
      * 
      * Checks if user is authenticated and deletes the token from the database.
      * 
-     * @return JsonResponse
+     * @return Illuminate\Http\Response
      */
     public function logout(Request $request)
     {
